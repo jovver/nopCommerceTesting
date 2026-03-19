@@ -18,7 +18,6 @@ export class Homepage {
     async assertPageTitle() {
         await expect(this.page).toHaveTitle(this.getHomePageTitle);
     }
-
 }
 
 export default Homepage;
