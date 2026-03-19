@@ -11,6 +11,9 @@ export class RegisterPage{
     readonly newsCheckbox: Locator;
     readonly passwordField: Locator;
     readonly confirmPasswordField: Locator;
+    readonly confirmRegistrationButton: Locator;
+    readonly registrationResult: Locator;
+    readonly continueButton: Locator;
 
     constructor (page: Page){
         this.page = page;
@@ -23,6 +26,9 @@ export class RegisterPage{
         this.newsCheckbox = page.getByRole('checkbox', { name: 'NewsLetterSubscriptions_0__IsActive'});
         this.passwordField = page.getByRole('textbox', { name: 'Password'});
         this.confirmPasswordField = page.getByRole('textbox', { name: 'ConfirmPassword'});
+        this.confirmRegistrationButton = page.getByRole('button', {name: 'register-button'});
+        this.registrationResult = page.getByText('Your registration completed');
+        this.continueButton = page.getBytext('Continue');
 
     }
 
@@ -70,11 +76,19 @@ export class RegisterPage{
         this.confirmPasswordField.fill(password);
     }
 
+    async clickRegistrationButtion(){
+        this.confirmRegistrationButton.click();
+    }
+
+    async clickContinueButton(){
+        this.continueButton.click();
+    }
+
     // Combination methods
 
 
     // Assertions
-    
+
 }
 
 export default RegisterPage;
