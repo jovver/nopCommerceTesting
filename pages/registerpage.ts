@@ -72,7 +72,8 @@ export class RegisterPage{
 
     // Combination methods
 
-    
+
+    // Assertions
     
 }
 
