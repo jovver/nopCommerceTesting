@@ -12,5 +12,8 @@
     "@playwright/test": "^1.58.2",
     "@types/node": "^25.5.0",
     "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "uuid": "^13.0.0"
   }
 }

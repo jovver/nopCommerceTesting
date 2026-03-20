@@ -19,16 +19,16 @@ export class RegisterPage{
         this.page = page;
         this.maleRadio = page.getByRole('radio', { name: 'Male'});
         this.femaleRadio = page.getByRole('radio', { name: 'Female'});
-        this.firstName = page.getByRole('textbox', { name: 'FirstName'});
+        this.firstName = page.getByLabel('FirstName');
         this.lastName = page.getByRole('textbox', { name: 'LastName'});
-        this.emailField = page.getByrole('textbox', { name: 'Email'});
+        this.emailField = page.getByRole('textbox', { name: 'Email'});
         this.companyName = page.getByRole('textbox', { name: 'Company'});
         this.newsCheckbox = page.getByRole('checkbox', { name: 'NewsLetterSubscriptions_0__IsActive'});
         this.passwordField = page.getByRole('textbox', { name: 'Password'});
         this.confirmPasswordField = page.getByRole('textbox', { name: 'ConfirmPassword'});
         this.confirmRegistrationButton = page.getByRole('button', {name: 'register-button'});
         this.registrationResult = page.getByText('Your registration completed');
-        this.continueButton = page.getBytext('Continue');
+        this.continueButton = page.getByText('Continue');
 
     }
 

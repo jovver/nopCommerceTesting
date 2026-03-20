@@ -6,6 +6,9 @@ export class Homepage {
     readonly homePageTitle: RegExp;
     readonly logInbutton: Locator;
     readonly logOutButton: Locator;
+    readonly searchBox: Locator;
+    readonly searchButton: Locator;
+    readonly myAccountButton: Locator;
 
     constructor(page: Page) {
         this.page = page;
@@ -13,6 +16,9 @@ export class Homepage {
         this.homePageTitle = /nopCommerce demo store. Home page title/;
         this.logInbutton = page.getByText('Log in');
         this.logOutButton = page.getByText('Log out');
+        this.searchBox = page.getByLabel('Search store');
+        this.searchButton = page.getByRole('button', { name: 'Search' });
+        this.myAccountButton = page.getByRole('link', { name: 'My account' });
 
     }
 
@@ -30,8 +36,20 @@ export class Homepage {
         await this.logOutButton.click();
     }
 
+    async enterSearchBox(productName: string) {
+        await this.searchBox.fill(productName);
+    }
+
+    async clickSearchButton() {
+        await this.searchButton.click();
+    }
+
     // Combination Methods
 
+    async searchForProduct(productName: string) {
+        await this.enterSearchBox(productName);
+        await this.clickSearchButton();
+    }
 
     // Assertions
 
@@ -39,7 +57,14 @@ export class Homepage {
         await expect(this.page).toHaveTitle(this.homePageTitle);
     }
 
-    
+    async assertMyAccountButtonVisible(){
+        await expect(this.myAccountButton).toBeVisible();
+    }
+
+    async assertLogOutButtonVisible(){
+        await expect(this.logOutButton).toBeVisible();
+    }
+
 
 }
 
