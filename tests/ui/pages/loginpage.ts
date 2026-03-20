@@ -1,5 +1,5 @@
 import { type Locator, type Page, expect } from '@playwright/test';
-import { RegisterPage } from './registerpage';
+import { RegisterPage } from './registerpage.js';
 
 export class LoginPage extends RegisterPage{
     readonly page: Page;

@@ -3,11 +3,15 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test-all": "npx playwright test",
+    "test-ui-c": "npx playwright test tests/ui/specs/ --project=chromium",
+    "test-ui-h": "npx playwright test tests/ui/specs/ --headed"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "devDependencies": {
     "@playwright/test": "^1.58.2",
     "@types/node": "^25.5.0",
