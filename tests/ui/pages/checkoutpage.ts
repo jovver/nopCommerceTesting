@@ -2,34 +2,34 @@ import {type Locator, type Page, expect } from '@playwright/test';
 
 export class CheckOutPage {
     readonly page: Page;
-    readonly checkOutTitle: Locator
-    readonly billingShipAddressCheckBox: Locator;
-    readonly billingFirstNameField: Locator;
-    readonly billingLastNameField: Locator;
-    readonly billingEmailField: Locator;
-    readonly billingCountryDropdown: Locator;
-    readonly billingCityField: Locator;
-    readonly billingAddressOneField: Locator;
-    readonly billingZipCodeField: Locator;
-    readonly billingPhoneNumberField: Locator;
-    readonly billingContinueButton: Locator;
-    readonly shippingMethodRadioGround: Locator;
-    readonly shippingMethodRadioAir: Locator;
-    readonly shippingMethodRadioNext: Locator;
-    readonly paymentMethodRadioOrder: Locator;
-    readonly paymentMethodRadioCC: Locator;
-    readonly ccDropdown: Locator;
-    readonly cardholderNameField: Locator;
-    readonly cardNumberField: Locator
-    readonly expirationMonthDropdown: Locator;
-    readonly expirationYearDropdown: Locator;
-    readonly cardCodeField: Locator;
-    readonly confirmButton: Locator;
-    readonly orderConfirmationMessage: Locator;
-    readonly errorCardHolderName: Locator;
-    readonly errorCardNumber: Locator;
-    readonly errorCVV: Locator;
-    readonly errorExpirationDate: Locator;
+    private readonly checkOutTitle: Locator
+    private readonly billingShipAddressCheckBox: Locator;
+    private readonly billingFirstNameField: Locator;
+    private readonly billingLastNameField: Locator;
+    private readonly billingEmailField: Locator;
+    private readonly billingCountryDropdown: Locator;
+    private readonly billingCityField: Locator;
+    private readonly billingAddressOneField: Locator;
+    private readonly billingZipCodeField: Locator;
+    private readonly billingPhoneNumberField: Locator;
+    private readonly billingContinueButton: Locator;
+    private readonly shippingMethodRadioGround: Locator;
+    private readonly shippingMethodRadioAir: Locator;
+    private readonly shippingMethodRadioNext: Locator;
+    private readonly paymentMethodRadioOrder: Locator;
+    private readonly paymentMethodRadioCC: Locator;
+    private readonly ccDropdown: Locator;
+    private readonly cardholderNameField: Locator;
+    private readonly cardNumberField: Locator
+    private readonly expirationMonthDropdown: Locator;
+    private readonly expirationYearDropdown: Locator;
+    private readonly cardCodeField: Locator;
+    private readonly confirmButton: Locator;
+    private readonly orderConfirmationMessage: Locator;
+    private readonly errorCardHolderName: Locator;
+    private readonly errorCardNumber: Locator;
+    private readonly errorCVV: Locator;
+    private readonly errorExpirationDate: Locator;
 
 
     constructor(page: Page) {

@@ -1,13 +1,11 @@
-import { type Locator, type Page, expect } from '@playwright/test';
+import { type Locator, type Page } from '@playwright/test';
 import { RegisterPage } from './registerpage.js';
 
 export class LoginPage extends RegisterPage{
-    readonly page: Page;
     readonly loginButton: Locator;
 
     constructor(page: Page){
         super(page);
-        this.page = page;
         this.loginButton = page.getByRole('button', { name: 'Log in' });
     }
 

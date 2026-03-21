@@ -2,13 +2,13 @@ import { type Locator, type Page, expect } from '@playwright/test';
 
 export class Homepage {
     readonly page: Page;
-    readonly registerButton: Locator;
-    readonly homePageTitle: RegExp;
-    readonly logInbutton: Locator;
-    readonly logOutButton: Locator;
-    readonly searchBox: Locator;
-    readonly searchButton: Locator;
-    readonly myAccountButton: Locator;
+    private readonly registerButton: Locator;
+    private readonly homePageTitle: RegExp;
+    private readonly logInbutton: Locator;
+    private readonly logOutButton: Locator;
+    private readonly searchBox: Locator;
+    private readonly searchButton: Locator;
+    private readonly myAccountButton: Locator;
 
     constructor(page: Page) {
         this.page = page;

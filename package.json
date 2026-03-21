@@ -5,10 +5,12 @@
   "main": "index.js",
   "scripts": {
     "test-all": "npx playwright test",
+    "test-all-c-h": "npx playwright test tests/ui/specs/ --project=chromium --headed",
     "test-ui-c": "npx playwright test tests/ui/specs/ --project=chromium",
     "test-ui-h": "npx playwright test tests/ui/specs/ --headed",
     "test-debug": "npx playwright test --debug",
     "test-headed": "npx playwright test --headed",
+    "test-d-h-c": "npx playwright test --project=chromium --debug --headed",
     "test-ui": "npx playwright test tests/ui/specs/",
     "report": "npx playwright show-report",
     "codegen": "npx playwright codegen https://demo.nopcommerce.com/"

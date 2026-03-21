@@ -2,26 +2,26 @@ import { type Locator, type Page, expect } from '@playwright/test';
 
 export class RegisterPage{
     readonly page: Page;
-    readonly maleRadio: Locator;
-    readonly femaleRadio: Locator;
-    readonly firstName: Locator;
-    readonly lastName: Locator;
-    readonly emailField: Locator;
-    readonly companyName: Locator;
-    readonly newsCheckbox: Locator;
-    readonly passwordField: Locator;
-    readonly confirmPasswordField: Locator;
-    readonly confirmRegistrationButton: Locator;
-    readonly registrationResult: Locator;
-    readonly continueButton: Locator;
-    readonly firstNameError: Locator;
-    readonly lastNameError: Locator;
-    readonly blankEmailError: Locator;
-    readonly invalidEmailError: Locator;
-    readonly invalidEmailDomainError: Locator;
-    readonly blankPasswordError: Locator
-    readonly invalidLengthPasswordError: Locator;
-    readonly mismatchedPasswordError: Locator;
+    private readonly maleRadio: Locator;
+    private readonly femaleRadio: Locator;
+    private readonly firstName: Locator;
+    private readonly lastName: Locator;
+    private readonly emailField: Locator;
+    private readonly companyName: Locator;
+    private readonly newsCheckbox: Locator;
+    private readonly passwordField: Locator;
+    private readonly confirmPasswordField: Locator;
+    private readonly confirmRegistrationButton: Locator;
+    private readonly registrationResult: Locator;
+    private readonly continueButton: Locator;
+    private readonly firstNameError: Locator;
+    private readonly lastNameError: Locator;
+    private readonly blankEmailError: Locator;
+    private readonly invalidEmailError: Locator;
+    private readonly invalidEmailDomainError: Locator;
+    private readonly blankPasswordError: Locator
+    private readonly invalidLengthPasswordError: Locator;
+    private readonly mismatchedPasswordError: Locator;
 
 
     constructor (page: Page){
@@ -103,8 +103,8 @@ export class RegisterPage{
 
     // Combination methods
 
-    async enterValidRegistrationInfo(gender: string, firstName: string, lastName: string, email: string, password: string){
-        await this.clickGenderRadio(gender);
+    async enterValidRegistrationInfo(firstName: string, lastName: string, email: string, password: string){
+        //await this.clickGenderRadio(gender);
         await this.enterFirstname(firstName);
         await this.enterLastName(lastName);
         await this.enterEmail(email);

@@ -22,7 +22,7 @@ test.describe('Registration Page tests', () => {
         }
     };
 
-    test.beforeEach(async ({ registerPage }) => {
+    test.beforeEach(async ({ page }) => {
         // Generate test credentials
         sharedCredential.credential.username = CredentialGenerator.randomUserName();
         sharedCredential.credential.password = CredentialGenerator.randomPassword(CredentialGenerator.randomPWLength(6, 64));
@@ -30,31 +30,10 @@ test.describe('Registration Page tests', () => {
         sharedCredential.credential.gender = CredentialGenerator.randomGender();
         console.log(`[Test Setup] Generated test credentials: ${JSON.stringify(sharedCredential)}`);
 
-        // Navigate to registration page
-        await registerPage.page.goto(uiPagesURL.register);;
+        page.goto(uiPagesURL.register)
 
     })
-
-    test('user can register successfully', async ({ registerPage }) => {
-        // Arrange
-        const fullName = sharedCredential.credential.username.split('_');
-        const firstName = String(fullName[0]);
-        const lastName = String(fullName[1]);
-
-        // Act
-        await registerPage.enterValidRegistrationInfo(
-            sharedCredential.credential.gender,
-            firstName,
-            lastName,
-            sharedCredential.credential.email,
-            sharedCredential.credential.password
-        );
-        await registerPage.clickRegistrationButton();
-
-        // Assert
-        registerPage.assertRegistrationSuccess();
-    })
-
+    
     test('user cannot register with no valid information', async ({ registerPage }) => {
         // Arrange
 

@@ -6,10 +6,10 @@ import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const authFile = path.join(__dirname, '.auth/user.json');
 
 // Load environment variables from .env file
 dotenv.config({ path: path.resolve(__dirname, '.env') });
+const authFile = path.join(__dirname, String(process.env.USERPATH));
 
 /**
  * Read environment variables from file.
@@ -27,7 +27,7 @@ export default defineConfig({
   globalTeardown: './tests/global.teardown.ts',
   testDir: './tests',
   /* Run tests in files in parallel */
-  fullyParallel: true,
+  fullyParallel: false,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
   forbidOnly: !!process.env.CI,
   /* Retry on CI only */
