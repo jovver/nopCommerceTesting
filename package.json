@@ -6,7 +6,12 @@
   "scripts": {
     "test-all": "npx playwright test",
     "test-ui-c": "npx playwright test tests/ui/specs/ --project=chromium",
-    "test-ui-h": "npx playwright test tests/ui/specs/ --headed"
+    "test-ui-h": "npx playwright test tests/ui/specs/ --headed",
+    "test-debug": "npx playwright test --debug",
+    "test-headed": "npx playwright test --headed",
+    "test-ui": "npx playwright test tests/ui/specs/",
+    "report": "npx playwright show-report",
+    "codegen": "npx playwright codegen https://demo.nopcommerce.com/"
   },
   "keywords": [],
   "author": "",
@@ -18,6 +23,8 @@
     "typescript": "^5.9.3"
   },
   "dependencies": {
+    "dotenv": "^17.3.1",
+    "playwright-mcp": "^0.0.10",
     "uuid": "^13.0.0"
   }
 }

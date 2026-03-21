@@ -4,7 +4,7 @@ export class CredentialGenerator {
 
     static randomUserName(): string {
         const prefix = 'testuser';
-        const randomSuffix = uuidv4().replaceAll('-', '');
+        const randomSuffix = Date.now();
         return `${prefix}_${randomSuffix}`;
     }
 
