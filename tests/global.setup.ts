@@ -2,7 +2,7 @@ import { chromium, FullConfig } from '@playwright/test';
 import dotenv from 'dotenv';
 import path from 'path';
 import { mkdirSync } from 'fs';
-import uiPagesURL from '@utils/uiPagesURL.js';
+import uiPagesURL from '@tests/ui/utils/uiPagesURL.js';
 import RegisterPage from './ui/pages/registerpage.js';
 import CredentialGenerator from '@utils/credentialGeneration.js';
 
@@ -60,12 +60,10 @@ async function globalSetup(config: FullConfig): Promise<void> {
         const page = await browser.newPage();
         const registerPage = new RegisterPage(page);
 
-        //const storageState = config.projects[0]?.use?.storageState;
-
         // Extract base URL from config
         const baseURL = config.projects[0]?.use?.baseURL
             ? String(config.projects[0].use.baseURL)
-            : 'http://localhost:3000';
+            : String(process.env.BASE_URL);
 
         console.log(`[GLOBAL SETUP] Target Environment: ${baseURL}`);
 

@@ -8,6 +8,7 @@ export class CheckOutPage {
     private readonly billingLastNameField: Locator;
     private readonly billingEmailField: Locator;
     private readonly billingCountryDropdown: Locator;
+    private readonly billingStateDropdown: Locator;
     private readonly billingCityField: Locator;
     private readonly billingAddressOneField: Locator;
     private readonly billingZipCodeField: Locator;
@@ -39,11 +40,12 @@ export class CheckOutPage {
         this.billingFirstNameField = page.getByRole('textbox', { name: 'BillingNewAddress.FirstName' });
         this.billingLastNameField = page.getByRole('textbox', { name: 'BillingNewAddress.LastName' });
         this.billingEmailField = page.getByRole('textbox', { name: 'BillingNewAddress.Email' });
-        this.billingCountryDropdown = page.getByRole('combobox', { name: 'BillingNewAddress.CountryId' });
-        this.billingCityField = page.getByRole('textbox', { name: 'BillingNewAddress.City' });
-        this.billingAddressOneField = page.getByRole('textbox', { name: 'BillingNewAddress.Address1' });
-        this.billingZipCodeField = page.getByRole('textbox', { name: 'BillingNewAddress.ZipPostalCode' });
-        this.billingPhoneNumberField = page.getByRole('textbox', { name: 'BillingNewAddress.PhoneNumber' });
+        this.billingCountryDropdown = page.getByRole('listbox', { name: 'Country:' });
+        this.billingStateDropdown = page.getByRole('listbox', { name: 'State / province:'});
+        this.billingCityField = page.getByRole('textbox', { name: 'City:' });
+        this.billingAddressOneField = page.getByRole('textbox', { name: 'Address 1:' });
+        this.billingZipCodeField = page.getByRole('textbox', { name: 'Zip / postal code' });
+        this.billingPhoneNumberField = page.getByRole('textbox', { name: 'Phone number:' });
         this.billingContinueButton = page.getByRole('button', { name: 'Continue' });
         this.shippingMethodRadioGround = page.getByRole('radio', { name: 'shippingoption' }).getByText('Ground');
         this.shippingMethodRadioAir = page.getByRole('radio', { name: 'shippingoption' }).getByText('Next Day Air');
@@ -85,6 +87,10 @@ export class CheckOutPage {
 
     async selectBillingCountry(country: string){
         await this.billingCountryDropdown.selectOption({ label: country });
+    }
+
+    async selectBillingState(state: string){
+        await this.billingStateDropdown.selectOption({ label: state });
     }
 
     async enterBillingCity(city: string){

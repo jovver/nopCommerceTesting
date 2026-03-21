@@ -12,8 +12,7 @@
     "test-headed": "npx playwright test --headed",
     "test-d-h-c": "npx playwright test --project=chromium --debug --headed",
     "test-ui": "npx playwright test tests/ui/specs/",
-    "report": "npx playwright show-report",
-    "codegen": "npx playwright codegen https://demo.nopcommerce.com/"
+    "report": "npx playwright show-report"
   },
   "keywords": [],
   "author": "",

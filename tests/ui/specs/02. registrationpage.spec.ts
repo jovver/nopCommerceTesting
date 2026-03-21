@@ -1,6 +1,6 @@
 import { test } from '../fixtures.js';
 import CredentialGenerator from '@utils/credentialGeneration.js';
-import uiPagesURL from '@utils/uiPagesURL.js';
+import uiPagesURL from '@tests/ui/utils/uiPagesURL.js';
 
 interface TestCredential {
     credential: {
