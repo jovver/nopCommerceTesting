@@ -50,7 +50,7 @@ async function globalSetup(config: FullConfig): Promise<void> {
     mkdirSync(path.dirname(authFile), { recursive: true });
 
     const startTime = Date.now();
-    const browser = await chromium.launch({ headless: false} );
+    const browser = await chromium.launch({ headless: true} );
 
     try {
         console.log('\n' + '='.repeat(70));

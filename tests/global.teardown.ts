@@ -14,7 +14,7 @@ async function globalTeardown(config: FullConfig): Promise<void> {
 
     const authFile = path.join(process.cwd(), '.auth', 'user.json');
     mkdirSync(path.dirname(authFile), { recursive: true });
-    const browser = await chromium.launch({ headless: false });
+    const browser = await chromium.launch({ headless: true });
 
     try {
         console.log('\n' + '='.repeat(70));
