@@ -1,4 +1,3 @@
-// api/StateAPI.ts
 import { APIRequestContext, expect } from '@playwright/test';
 import { State } from '../types/state.api.types.js';
 
@@ -13,20 +12,17 @@ export class StateAPI {
         this.countryId = countryId;
     }
 
-    // Fetch all states from the API
     async getStates(): Promise<State[]> {
         const response = await this.request.get(`${this.endpoint}${this.countryId}`);
         expect(response.status()).toBe(200);
         return await response.json();
     }
 
-    // Get all states excluding the placeholder 'Select state' entry (id: 0)
     async getValidStates(): Promise<State[]> {
         const states = await this.getStates();
         return states.filter((state) => state.id !== 0);
     }
 
-    // Randomly select one state
     async getRandomState(): Promise<String> {
         const validStates = await this.getValidStates();
 

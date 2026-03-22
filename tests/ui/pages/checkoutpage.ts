@@ -37,9 +37,9 @@ export class CheckOutPage {
         this.page = page;
         this.checkOutTitle = page.getByRole('heading', { name: 'Checkout' });
         this.billingShipAddressCheckBox = page.getByRole('checkbox', { name: 'ShipToSameAddress' });
-        this.billingFirstNameField = page.getByRole('textbox', { name: 'BillingNewAddress.FirstName' });
-        this.billingLastNameField = page.getByRole('textbox', { name: 'BillingNewAddress.LastName' });
-        this.billingEmailField = page.getByRole('textbox', { name: 'BillingNewAddress.Email' });
+        this.billingFirstNameField = page.getByRole('textbox', { name: 'First name:' });
+        this.billingLastNameField = page.getByRole('textbox', { name: 'Last name:' });
+        this.billingEmailField = page.getByRole('textbox', { name: 'Email:' });
         this.billingCountryDropdown = page.getByRole('listbox', { name: 'Country:' });
         this.billingStateDropdown = page.getByRole('listbox', { name: 'State / province:'});
         this.billingCityField = page.getByRole('textbox', { name: 'City:' });

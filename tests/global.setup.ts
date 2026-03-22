@@ -115,14 +115,6 @@ async function globalSetup(config: FullConfig): Promise<void> {
             console.warn('[GLOBAL SETUP] ⚠ NOPCOMMERCE_AUTH_COOKIE not found in .env, skipping authentication setup');
         }
 
-        // TODO: Add additional setup tasks:
-        // - Authenticate API clients if needed
-        // - Create test users/data seeds
-        // - Initialize external services (databases, APIs)
-        // - Clear previous test artifacts
-        // - Warm up application caches
-        // - Validate all required endpoints
-
         const duration = Date.now() - startTime;
         console.log(`[GLOBAL SETUP] ✓ Initialization completed in ${duration}ms`);
         console.log('='.repeat(70) + '\n');
